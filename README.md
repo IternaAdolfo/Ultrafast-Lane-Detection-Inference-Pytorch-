@@ -42,8 +42,9 @@ Download the pretrained model from the [original repository](https://github.com/
 
  * **Carla RGB Cam inference**:
  
- ```
-carlaLaneDetection.ipynb ```
+```
+carlaLaneDetection.ipynb 
+```
  
 
  
