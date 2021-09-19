@@ -1,18 +1,32 @@
 # Ultrafast Lane Detection Inference Pytorch
-Example scripts for the detection of lanes using the [ultra fast lane detection model](https://github.com/cfzd/Ultra-Fast-Lane-Detection) in Pytorch.
+Example Jupyter-Notebook file for the detection of lanes using the [ultra fast lane detection model](https://github.com/cfzd/Ultra-Fast-Lane-Detection) in Pytorch.
 
-![!Ultra fast lane detection](https://github.com/ibaiGorordo/Ultrafast-Lane-Detection-Inference-Pytorch-/blob/main/doc/img/detected%20lanes.jpg)
+
 Source: https://www.flickr.com/photos/32413914@N00/1475776461/
+![!Ultra fast lane detection](https://github.com/ibaiGorordo/Ultrafast-Lane-Detection-Inference-Pytorch-/blob/main/doc/img/detected%20lanes.jpg)
 
 # Requirements
 
- * **OpenCV**, **Scikit-learn** and **pytorch**. **pafy** and **youtube-dl** are required for youtube video inference. 
+ * **OpenCV**, **Scikit-learn** and **pytorch**. 
+
+# Conda and Carla Requirements
+```
+# conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch
+# conda create --name pytorch-gpu-cuda10.1   **-c pytorch**  pytorch torchvision  cudatoolkit=10.1 jupyterlab scikit-learn opencv
+
+
+cd workspace/github/Ultrafast-Lane-Detection-Inference-Pytorch-
+conda info --envs
+conda activate pytorch-gpu-cuda10.1
+jupyter-lab
+
+cd Downloads\CARLA_0.9.12\WindowsNoEditor
+CarlaUE4 /Game/Carla/Maps/Town03 -windowed -ResX=256 -ResY=128 -carla-port=3000 -benchmark -fps=30   -quality-level=Epic
+```
  
 # Installation
 ```
-pip install -r requirements
-pip install pafy youtube-dl
-
+pip install carla
 ```
 **Pytorch:** Check the [Pytorch website](https://pytorch.org/) to find the best method to install Pytorch in your computer.
 
@@ -26,23 +40,12 @@ Download the pretrained model from the [original repository](https://github.com/
  
 # Examples
 
- * **Image inference**:
+ * **Carla RGB Cam inference**:
  
  ```
- python imageLaneDetection.py 
- ```
+carlaLaneDetection.ipynb ```
  
-  * **Webcam inference**:
- 
- ```
- python webcamLaneDetection.py
- ```
- 
-  * **Video inference**:
- 
- ```
- python videoLaneDetection.py
- ```
+
  
  # [Inference video Example](https://youtu.be/0Owf6gef1Ew) 
  ![!Ultrafast lane detection on video](https://github.com/ibaiGorordo/Ultrafast-Lane-Detection-Inference-Pytorch-/blob/main/doc/img/laneDetection.gif)
